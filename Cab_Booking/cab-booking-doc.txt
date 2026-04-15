@@ -1,0 +1,24 @@
+Cab Booking Application – MERN Stack Project
+Syllabus Mapping
+• React Hooks & State Management
+• Context API / Redux
+• Node.js & Express Backend
+• MongoDB Database Design
+• JWT Authentication & Protected Routes
+Project Description
+A ride-booking application that allows users to book cabs, track rides, and view trip history.
+Core Features
+• Live Location Tracking
+• Fare Estimation
+• Ride History
+• Driver Assignment System
+API Suggestions
+• POST /ride/book
+• GET /ride/:userId
+• PUT /ride/:id/status
+• DELETE /ride/:id
+Submission
+GitHub Repository + Deployment Link + README
+
+-- 1 of 1 --
+
