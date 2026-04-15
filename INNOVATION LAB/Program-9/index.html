@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        .slider{
+            text-align:center;
+            position:relative;
+            width:60%;
+            margin:auto;
+        }
+        .slider img{
+            width:100%;
+            height:auto;
+        }
+        .slider button{
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            padding:10px;
+            background-color:rgba(0,0,0,0.5);
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+        #prevBtn{
+            left:10px;
+        }
+        #nextBtn{
+            right:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "slider">
+        <img src="https://via.placeholder.com/800x400?text=Image+1" id="sliderImage" alt="Image 1">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+    </div>
+    <script>
+        let images=[
+            "https://via.placeholder.com/800x400?text=Eagle",
+            "https://via.placeholder.com/800x400?text=Lion",
+            "https://via.placeholder.com/800x400?text=Shiva"
+        ];
+        let currentIndex = 0;
+        const imgElement = document.getElementById("sliderImage");
+        const nextBtn = document.getElementById("nextBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        nextBtn.addEventListener("click",() => {
+            currentIndex = (currentIndex +1)%images.length;
+            imgElement.src = images[currentIndex];
+        });
+        prevBtn.addEventListener("click",() => {
+            currentIndex = (currentIndex - 1 +images.length)%images.length;
+            imgElement.src = images[currentIndex];
+        });
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            imgElement.src = images[currentIndex];
+        }, 3000);
+    </script>
+</body>
+</html>
